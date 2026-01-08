@@ -1,0 +1,299 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | TechWorld 2026</title>
+</head>
+<style>
+/* TechWorld 2026 - Modern Contrast Theme */
+:root {
+    --header-bg: #0f172a;
+    --nav-text: #ffffff;
+    --bg: #ffffff;
+    --accent: #38bdf8;
+    --text-main: #1e293b;
+    --card-bg: #f8fafc;
+    --border: #e2e8f0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text-main);
+    font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* HEADER */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 10%;
+    background-color: var(--header-bg);
+    color: var(--nav-text);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo { 
+    font-size: 1.6rem; 
+    font-weight: 800; 
+    color: var(--accent);
+}
+
+nav ul { 
+    display: flex; 
+    list-style: none; 
+    gap: 30px;
+}
+
+nav ul li a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+nav ul li a:hover, 
+nav ul li a.active { 
+    color: var(--accent); 
+}
+
+/* MAIN CONTENT */
+.container { 
+    padding: 100px 10%; 
+    text-align: center; 
+    background-color: var(--bg);
+}
+
+.services-intro {
+    margin-bottom: 80px;
+}
+
+h1 { 
+    font-size: 3.5rem; 
+    color: var(--header-bg);
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: var(--header-bg);
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+p { 
+    color: #64748b; 
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* GRID LAYOUT */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin: 60px 0;
+}
+
+/* CARD COMPONENT */
+.card {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-color: var(--accent);
+}
+
+.card h3 { 
+    color: var(--header-bg);
+}
+
+.card p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* ICON STYLING */
+.icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--accent), #0ea5e9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* ROADMAP SECTION */
+.roadmap {
+    margin: 80px 0;
+    padding: 60px;
+    background: var(--card-bg);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+.roadmap h2 {
+    margin-bottom: 20px;
+}
+
+.roadmap p {
+    margin-bottom: 30px;
+}
+
+/* BUTTON */
+.btn {
+    display: inline-block;
+    padding: 16px 35px;
+    background: var(--header-bg);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.3s;
+    border: 2px solid var(--header-bg);
+}
+
+.btn:hover {
+    background: transparent;
+    color: var(--header-bg);
+    transform: scale(1.05);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 40px;
+    background: #f1f5f9;
+    border-top: 1px solid var(--border);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    .container {
+        padding: 60px 5%;
+    }
+    
+    .grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .roadmap {
+        padding: 40px 20px;
+    }
+}
+</style>
+<body>
+    <nav>
+        <div class="logo">TechWorld</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html" class="active">Services</a></li>
+            <li><a href="trends.html">2026 Trends</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <header class="services-intro">
+            <h1>Our 2026 Service Suite</h1>
+            <p>Empowering global enterprises with autonomous intelligence and sustainable digital infrastructure.</p>
+        </header>
+
+        <div class="grid">
+            <!-- 1. Agentic AI -->
+            <div class="card">
+                <div class="icon">🤖</div>
+                <h3>Agentic AI Workflows</h3>
+                <p>Deploy autonomous multi-agent systems that plan and execute complex business processes without human intervention.</p>
+            </div>
+
+            <!-- 2. Preemptive Security -->
+            <div class="card">
+                <div class="icon">🛡️</div>
+                <h3>Preemptive Cybersecurity</h3>
+                <p>Utilize predictive AI to neutralize network threats and digital anomalies before they breach your perimeter.</p>
+            </div>
+
+            <!-- 3. Sustainable IT -->
+            <div class="card">
+                <div class="icon">🌱</div>
+                <h3>Green Computing</h3>
+                <p>Carbon-aware infrastructure optimization to reduce your digital footprint while maintaining 99.9% uptime.</p>
+            </div>
+
+            <!-- 4. Confidential Computing -->
+            <div class="card">
+                <div class="icon">🔒</div>
+                <h3>Confidential Computing</h3>
+                <p>Process sensitive enterprise data in hardware-isolated secure vaults to ensure total privacy during computation.</p>
+            </div>
+
+            <!-- 5. Spatial Systems -->
+            <div class="card">
+                <div class="icon">🕶️</div>
+                <h3>Spatial Computing (XR)</h3>
+                <p>Immersive 3D interfaces for industrial training and remote collaboration using the latest AR/VR standards.</p>
+            </div>
+
+            <!-- 6. Quantum-Safe Prep -->
+            <div class="card">
+                <div class="icon">⚛️</div>
+                <h3>Quantum-Safe Prep</h3>
+                <p>Auditing and upgrading your current encryption standards to be resilient against future quantum computing risks.</p>
+            </div>
+        </div>
+
+        <section class="roadmap">
+            <h2>The 2026 Technology Roadmap</h2>
+            <p>Our commitment to constant evolution includes upcoming 6G Industrial Integration and Biological Computing Research.</p>
+            <a href="contact.html" class="btn">Partner with Us</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 TechWorld. Engineering Tomorrow, Today.</p>
+    </footer>
+</body>
+</html>

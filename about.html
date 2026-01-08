@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About TechWorld | Our 2026 Vision</title>
+</head>
+<style>
+/* TechWorld 2026 - Modern Contrast Theme */
+:root {
+    --header-bg: #0f172a;
+    --nav-text: #ffffff;
+    --bg: #ffffff;
+    --accent: #38bdf8;
+    --text-main: #1e293b;
+    --card-bg: #f8fafc;
+    --border: #e2e8f0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text-main);
+    font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* HEADER */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 10%;
+    background-color: var(--header-bg);
+    color: var(--nav-text);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo { 
+    font-size: 1.6rem; 
+    font-weight: 800; 
+    color: var(--accent);
+}
+
+nav ul { 
+    display: flex; 
+    list-style: none; 
+    gap: 30px;
+}
+
+nav ul li a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+nav ul li a:hover, 
+nav ul li a.active { 
+    color: var(--accent); 
+}
+
+/* MAIN CONTENT */
+.container { 
+    padding: 100px 10%; 
+    text-align: center; 
+    background-color: var(--bg);
+}
+
+.about-hero {
+    margin-bottom: 60px;
+}
+
+h1 { 
+    font-size: 3.5rem; 
+    color: var(--header-bg);
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: var(--header-bg);
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+h4 {
+    font-size: 1.2rem;
+    color: var(--text-main);
+    margin-bottom: 8px;
+}
+
+p { 
+    color: #64748b; 
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* GRID LAYOUT */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 60px 0;
+}
+
+/* CARD COMPONENT */
+.card {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 { 
+    color: var(--header-bg);
+}
+
+/* TEAM SECTION */
+.team-section {
+    margin: 80px 0;
+}
+
+.team-member {
+    text-align: center;
+}
+
+.profile-img,
+.icon-small-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 4px solid var(--accent);
+}
+
+/* STATS SECTION */
+.stats {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 80px 0;
+    gap: 40px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-item h2 {
+    font-size: 4rem;
+    color: var(--accent);
+    margin-bottom: 10px;
+}
+
+.stat-item p {
+    font-size: 1.1rem;
+    color: var(--text-main);
+}
+
+/* BUTTON */
+.btn {
+    display: inline-block;
+    padding: 16px 35px;
+    background: var(--header-bg);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.3s;
+    border: 2px solid var(--header-bg);
+    margin-top: 20px;
+}
+
+.btn:hover {
+    background: transparent;
+    color: var(--header-bg);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 40px;
+    background: #f1f5f9;
+    border-top: 1px solid var(--border);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    .container {
+        padding: 60px 5%;
+    }
+    
+    .grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats {
+        flex-direction: column;
+    }
+}
+</style>
+<body>
+    <nav>
+        <div class="logo">TechWorld</div>
+        <ul>
+             <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="trends.html" class="active">2026 Trends</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <section class="about-hero">
+            <h1>Defining the 2026 Digital Frontier</h1>
+            <p>Founded on the principle of "Human-Centric Autonomy," TechWorld is the global leader in agentic systems and sustainable infrastructure.</p>
+        </section>
+
+        <div class="grid">
+            <div class="card">
+                <h3>Our Mission</h3>
+                <p>To bridge the gap between static software and autonomous intelligence, ensuring that technology serves as a proactive partner in human progress rather than just a tool.</p>
+            </div>
+            <div class="card">
+                <h3>Sustainability First</h3>
+                <p>By 2026, TechWorld has achieved a net-zero carbon footprint across all cloud operations, utilizing carbon-aware scheduling to power the next generation of AI.</p>
+            </div>
+        </div>
+
+        <section class="team-section">
+            <h2>Our Leadership</h2>
+            <p>A diverse collective of engineers, ethicists, and designers dedicated to the future of the web.</p>
+            <div class="grid">
+                <div class="card team-member">
+                    <img src="ceo.jpg" alt="CEO Alex Rivers" class="icon-small-circle">
+                    <h4>Alex Rivers</h4>
+                    <p>Chief AI Architect</p>
+                </div>
+                <div class="card team-member">
+                    <img src="cto.jpg" alt="CTO" class="profile-img">
+                    <h4>Sarah Chen</h4>
+                    <p>Head of Sustainable IT</p>
+                </div>
+                <div class="card team-member">
+                    <img src="cso.jpg" alt="CSO" class="profile-img">
+                    <h4>Jordan Vane</h4>
+                    <p>Director of Preemptive Security</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats">
+            <div class="stat-item">
+                <h2>500+</h2>
+                <p>Autonomous Agents Deployed</p>
+            </div>
+            <div class="stat-item">
+                <h2>12</h2>
+                <p>Sovereign Cloud Hubs</p>
+            </div>
+            <div class="stat-item">
+                <h2>100%</h2>
+                <p>Renewable Energy</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 TechWorld. Building a smarter, more sustainable world.</p>
+    </footer>
+</body>
+</html>

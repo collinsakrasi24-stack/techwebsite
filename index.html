@@ -1,0 +1,404 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechWorld | Home</title>
+</head>
+<style>
+/* TechWorld 2026 - Modern Contrast Theme */
+:root {
+    --header-bg: #0f172a;
+    --nav-text: #ffffff;
+    --bg: #ffffff;
+    --accent: #38bdf8;
+    --text-main: #1e293b;
+    --card-bg: #f8fafc;
+    --border: #e2e8f0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text-main);
+    font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* HEADER */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 10%;
+    background-color: var(--header-bg);
+    color: var(--nav-text);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo { 
+    font-size: 1.6rem; 
+    font-weight: 800; 
+    color: var(--accent);
+    animation: glow 3s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0%, 100% { text-shadow: 0 0 10px var(--accent); }
+    50% { text-shadow: 0 0 20px var(--accent), 0 0 30px var(--accent); }
+}
+
+nav ul { 
+    display: flex; 
+    list-style: none; 
+    gap: 30px;
+}
+
+nav ul li a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s ease;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+    width: 100%;
+}
+
+nav ul li a:hover, 
+nav ul li a.active { 
+    color: var(--accent); 
+}
+
+/* HERO SECTION */
+.hero {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 100px 10%;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(56, 189, 248, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(15, 23, 42, 0.05) 0%, transparent 50%);
+    animation: pulse 8s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+h1 { 
+    font-size: 4rem; 
+    color: var(--header-bg);
+    font-weight: 800;
+    margin-bottom: 20px;
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero p { 
+    color: #64748b; 
+    font-size: 1.4rem;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+/* ANIMATED GRADIENT TEXT */
+.gradient-text {
+    background: linear-gradient(90deg, var(--accent), #0f172a, var(--accent));
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% center; }
+    50% { background-position: 100% center; }
+}
+
+/* FEATURES SECTION */
+.features {
+    padding: 80px 10%;
+    background: var(--bg);
+}
+
+.features h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--header-bg);
+    margin-bottom: 60px;
+    font-weight: 700;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    text-align: left;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.card:hover::before {
+    left: 100%;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-color: var(--accent);
+}
+
+.card h3 { 
+    color: var(--header-bg);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #64748b;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--accent), #0ea5e9);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: white;
+}
+
+/* BUTTON */
+.btn {
+    display: inline-block;
+    padding: 18px 40px;
+    background: var(--header-bg);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid var(--header-bg);
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: var(--accent);
+    transition: width 0.6s ease, height 0.6s ease;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn:hover {
+    color: white;
+    border-color: var(--accent);
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(56, 189, 248, 0.3);
+}
+
+/* STATS SECTION */
+.stats {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 80px 10%;
+    background: var(--card-bg);
+    gap: 40px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-item h2 {
+    font-size: 4rem;
+    color: var(--accent);
+    margin-bottom: 10px;
+    font-weight: 800;
+}
+
+.stat-item p {
+    font-size: 1.1rem;
+    color: var(--text-main);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 40px;
+    background: #f1f5f9;
+    border-top: 1px solid var(--border);
+    color: #64748b;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero {
+        min-height: 60vh;
+        padding: 60px 5%;
+    }
+    
+    .features {
+        padding: 60px 5%;
+    }
+    
+    .grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats {
+        flex-direction: column;
+        padding: 60px 5%;
+    }
+}
+</style>
+<body>
+    <nav>
+        <div class="logo">TechWorld</div>
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="trends.html">2026 Trends</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>The Future of <span class="gradient-text">Intelligence</span></h1>
+            <p>Welcome to TechWorld 2026. We specialize in Agentic AI and digital ecosystems that transform how businesses operate in the autonomous age.</p>
+            <a href="services.html" class="btn">Explore Services</a>
+        </div>
+    </section>
+
+
+
+    <section class="stats">
+        <div class="stat-item">
+            <h2>500+</h2>
+            <p>Autonomous Agents Deployed</p>
+        </div>
+        <div class="stat-item">
+            <h2>99.9%</h2>
+            <p>System Uptime</p>
+        </div>
+        <div class="stat-item">
+            <h2>12</h2>
+            <p>Global Cloud Hubs</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 TechWorld. Building a smarter, more sustainable world.</p>
+    </footer>
+</body>
+</html>
